@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import App from '../App';
+import { render, screen } from "@testing-library/react";
+import Root from "../Root";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("Root application", () => {
+  test("renders home page", () => {
+    render(<Root />);
+    const linkElement = screen.getByText(/Welcome to Shoppy/i);
+    expect(linkElement).toBeInTheDocument();
+  });
 });

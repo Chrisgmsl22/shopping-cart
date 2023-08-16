@@ -2,13 +2,13 @@ import "./App.css";
 import { Navbar } from "./components/Navbar";
 import { Content } from "./components/Content/Content";
 
-function App() {
+const Root = () => {
   return (
     <>
       <Navbar />
       <Content />
     </>
   );
-}
+};
 
-export default App;
+export default Root;
