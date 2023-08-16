@@ -1,3 +1,4 @@
+import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Nav } from "./stylesheets";
 
 export const Navbar = () => {
@@ -20,6 +21,11 @@ export const Navbar = () => {
           </li>
           <li>
             <a href="#">Contact</a>
+          </li>
+          <li>
+            <a href="#">
+              <ShoppingCartOutlined />
+            </a>
           </li>
         </ul>
       </nav>

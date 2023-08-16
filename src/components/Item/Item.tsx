@@ -1,18 +1,22 @@
-import { nanoid } from "nanoid";
 import { ItemApi } from "../../api/api";
-import { Button, Card } from "antd";
+import { Button } from "antd";
 import { CustomCard } from "./stylesheets";
 import "./stylesheets";
 
 // Interface IS used, but from a different file
 interface ItemComponentProps {
   item: ItemApi;
+  onAddToCart: (item: ItemApi) => void;
 }
 
-export const ItemComponent: React.FC<ItemComponentProps> = ({ item }) => {
+export const ItemComponent: React.FC<ItemComponentProps> = ({
+  item,
+  onAddToCart,
+}) => {
   const { id, title, price, description, category, image, rating } = item;
   const handleClick = () => {
-    return alert("Added to cart!");
+    onAddToCart(item);
+    alert(`${item.title} was added to the Cart`);
   };
 
   return (
@@ -32,7 +36,3 @@ export const ItemComponent: React.FC<ItemComponentProps> = ({ item }) => {
     </CustomCard>
   );
 };
-
-// <li key={id}>
-//       {title} ${price}
-//     </li>
