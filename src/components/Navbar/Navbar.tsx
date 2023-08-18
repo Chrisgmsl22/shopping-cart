@@ -1,31 +1,41 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Nav } from "./stylesheets";
+import { Link, useNavigate } from "react-router-dom";
+import { ItemsProps } from "../../api/api";
 
-export const Navbar = () => {
+export const Navbar = ({ items }: ItemsProps) => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/total", { state: { items: items } });
+  };
   return (
     <Nav>
       {/* <header className=""> */}
       <nav className="navbar">
-        <a href="#" className="logo">
-          Home
-        </a>
+        <Link to="/" className="logo">
+          {/* <Logo /> */}
+          <img
+            src="https://static.thenounproject.com/png/102903-200.png"
+            alt="logo"
+            style={{ width: "50px" }}
+          />
+        </Link>
         <ul className="navMenu">
           <li>
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#">Catalog</a>
+            <Link to="/catalog">Catalog</Link>
           </li>
           <li>
-            <a href="#">All Products</a>
+            <Link to="/all-products">All Products</Link>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <a href="#">
-              <ShoppingCartOutlined />
-            </a>
+            <ShoppingCartOutlined onClick={handleNavigate} />
           </li>
         </ul>
       </nav>

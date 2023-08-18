@@ -3,13 +3,37 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Root from "./Root";
 import { ErrorPage } from "./error";
+import Root from "./Root";
+import { TotalPage } from "./components/Total";
+import { Contact } from "./components/pages/Contact";
+import { Catalog } from "./components/pages/Catalog";
+import { AllProducts } from "./components/pages/AllProducts";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "total",
+    element: <TotalPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "all-products",
+    element: <AllProducts />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "contact",
+    element: <Contact />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "catalog",
+    element: <Catalog />,
     errorElement: <ErrorPage />,
   },
 ]);

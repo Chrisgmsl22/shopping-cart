@@ -10,6 +10,10 @@ export interface ItemApi {
     rating: { rate: number; count: number }
 }
 
+export interface ItemsProps {
+    items?: Array<ItemApi>;
+}
+
 // Here we do the fetch api thing
 export const fetchItems = async (): Promise<Array<ItemApi>> => {
     try {

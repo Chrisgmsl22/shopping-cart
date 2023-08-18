@@ -5,7 +5,7 @@ import { Content } from "./components/Content/Content";
 const Root = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Content />
     </>
   );

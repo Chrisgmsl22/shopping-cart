@@ -1,4 +1,4 @@
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import { styled } from "styled-components";
 
 export const CustomCard = styled(Card)`
@@ -27,4 +27,8 @@ export const CustomCard = styled(Card)`
         /* max-kjmn  : 100px; */
         color: #777;
     }
+`;
+
+export const CustomButton = styled(Button)`
+    background: #C23373;
 `;
