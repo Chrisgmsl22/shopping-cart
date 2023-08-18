@@ -1,13 +1,13 @@
 import { Typography } from "antd";
 import { Navbar } from "../../Navbar";
 
-export const Contact = () => {
+export const AllProducts = () => {
   const { Title } = Typography;
+
   return (
     <>
       <Navbar />
-
-      <Title level={1}>Contact</Title>
+      <Title>All Products</Title>
     </>
   );
 };
