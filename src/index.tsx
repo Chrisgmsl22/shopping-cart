@@ -9,6 +9,7 @@ import { TotalPage } from "./components/Total";
 import { Contact } from "./components/pages/Contact";
 import { Catalog } from "./components/pages/Catalog";
 import { AllProducts } from "./components/pages/AllProducts";
+import { ShoppingCartProvider } from "./context";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ShoppingCartProvider>
+      <RouterProvider router={router} />
+    </ShoppingCartProvider>
   </React.StrictMode>
 );
 

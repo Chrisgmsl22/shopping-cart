@@ -2,25 +2,25 @@ import { ItemApi } from "../../api/api";
 import { Button, Typography } from "antd";
 import { CustomButton, CustomCard } from "./stylesheets";
 import "./stylesheets";
+import { useShoppingCart } from "../../context";
+import { Item } from "../../types";
 
 // Interface IS used, but from a different file
-interface ItemComponentProps {
-  item: ItemApi;
-  onAddToCart: (item: ItemApi) => void;
+interface ItemComponentProps extends Item {
+  onAddToCart?: (item: ItemApi) => void;
 }
 
-export const ItemComponent: React.FC<ItemComponentProps> = ({
-  item,
-  onAddToCart,
-}) => {
+export const ItemComponent: React.FC<ItemComponentProps> = ({ item }) => {
   const { id, title, price, description, category, image, rating } = item;
+  const { setSelectedItems } = useShoppingCart();
   const { Title, Paragraph } = Typography;
-  const handleClick = () => {
-    onAddToCart(item);
+  const handleClick = (item: ItemApi) => {
+    setSelectedItems((prevItems: Array<ItemApi>) => [...prevItems, item]);
     alert(`${item.title} was added to the Cart`);
   };
 
   return (
+    //TODO: add onClick event for each card and redirect to a new page for the item selected
     <CustomCard
       hoverable
       style={{ width: "240" }}
@@ -31,7 +31,7 @@ export const ItemComponent: React.FC<ItemComponentProps> = ({
       <Paragraph>Category: {category}</Paragraph>
       <Paragraph>Rating: {rating.rate}</Paragraph>
       <Paragraph className="description">Description: {description}</Paragraph>
-      <CustomButton onClick={handleClick} type="primary">
+      <CustomButton onClick={() => handleClick(item)} type="primary">
         Add to Cart
       </CustomButton>
     </CustomCard>

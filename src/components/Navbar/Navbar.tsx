@@ -1,9 +1,9 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Nav } from "./stylesheets";
 import { Link, useNavigate } from "react-router-dom";
-import { ItemsProps } from "../../api/api";
+import { NavItems } from "../../types";
 
-export const Navbar = ({ items }: ItemsProps) => {
+export const Navbar = ({ items }: NavItems) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {

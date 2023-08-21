@@ -1,16 +1,11 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Badge, Button } from "antd";
 import { StickyButton } from "./stylesheets";
-import { ItemApi } from "../../api/api";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Items } from "../../types";
 
-interface ShoppingIconProps {
-  items: ItemApi[];
-}
-
-export const ShoppingIcon = ({ items }: ShoppingIconProps) => {
+export const ShoppingIcon = ({ items }: Items) => {
   console.log("SELECTED ITEMS on icon ", items.length);
-  const location = useLocation();
   const navigate = useNavigate();
 
   const handleTotalClick = () => {
