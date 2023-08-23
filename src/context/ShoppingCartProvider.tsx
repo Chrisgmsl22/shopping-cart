@@ -7,6 +7,7 @@ import {
 } from "react";
 import { ItemApi } from "../api/api";
 
+// todo, add type
 const ShoppingCartContext = createContext<any | null>(undefined);
 
 export const ShoppingCartProvider = ({ children }: { children: ReactNode }) => {

@@ -14,6 +14,7 @@ export const ItemComponent: React.FC<ItemComponentProps> = ({ item }) => {
   const { id, title, price, description, category, image, rating } = item;
   const { setSelectedItems } = useShoppingCart();
   const { Title, Paragraph } = Typography;
+
   const handleClick = (item: ItemApi) => {
     setSelectedItems((prevItems: Array<ItemApi>) => [...prevItems, item]);
     alert(`${item.title} was added to the Cart`);

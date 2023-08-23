@@ -1,7 +1,6 @@
 import { Typography } from "antd";
 import { Navbar } from "../Navbar";
 import { ItemApi } from "../../api/api";
-import { useLocation } from "react-router-dom";
 import { EmptyCart } from "../../widgets/EmptyCart";
 import { useShoppingCart } from "../../context";
 const { Title, Paragraph } = Typography;

@@ -3,12 +3,12 @@ import { Nav } from "./stylesheets";
 import { Link, useNavigate } from "react-router-dom";
 import { NavItems } from "../../types";
 
-export const Navbar = ({ items }: NavItems) => {
+export const Navbar = () => {
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
-    navigate("/total", { state: { items: items } });
-  };
+  // const handleNavigate = () => {
+  //   navigate("/total", { state: { items: items } });
+  // };
   return (
     <Nav>
       {/* <header className=""> */}
@@ -35,7 +35,10 @@ export const Navbar = ({ items }: NavItems) => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <ShoppingCartOutlined onClick={handleNavigate} />
+            <Link to="/total">
+              <ShoppingCartOutlined />
+            </Link>
+            {/* <ShoppingCartOutlined onClick={handleNavigate} /> */}
           </li>
         </ul>
       </nav>

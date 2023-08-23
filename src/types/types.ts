@@ -8,6 +8,4 @@ export type Items = {
     items: Array<ItemApi>;
 }
 
-export type NavItems = {
-    items?: Items;
-}
+export type NavItems = Items | undefined;

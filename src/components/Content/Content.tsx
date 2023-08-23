@@ -32,7 +32,7 @@ export const Content = () => {
   console.log("DEBUG fetchedItems ", items);
   return (
     <>
-      <Navbar items={selectedItems} />
+      <Navbar />
       <Title>Welcome to Shoppy</Title>
       <ShoppingIcon items={selectedItems} />
       <Items items={items} />
