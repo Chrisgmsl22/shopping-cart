@@ -7,7 +7,8 @@ export interface ItemApi {
     description: string;
     category: string;
     image: string;
-    rating: { rate: number; count: number }
+    rating: { rate: number; count: number };
+    quantity?: number;
 }
 
 

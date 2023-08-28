@@ -4,11 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { NavItems } from "../../types";
 
 export const Navbar = () => {
-  const navigate = useNavigate();
-
-  // const handleNavigate = () => {
-  //   navigate("/total", { state: { items: items } });
-  // };
   return (
     <Nav>
       {/* <header className=""> */}
