@@ -19,7 +19,6 @@ export const SelectedItem = ({ item }: Item) => {
     );
 
     setSelectedItems(updatedItems);
-    console.log("DEBUG after plusButton: ", updatedItems);
   };
 
   const handleDecrease = () => {
@@ -32,7 +31,6 @@ export const SelectedItem = ({ item }: Item) => {
         : selectedItem
     );
     setSelectedItems(updatedItems);
-    console.log("DEBUG after minusButton: ", selectedItems);
   };
   return (
     <ItemCard

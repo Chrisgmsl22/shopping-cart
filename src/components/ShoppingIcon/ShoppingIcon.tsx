@@ -10,7 +10,7 @@ export const ShoppingIcon = ({ items }: Items) => {
 
   const handleTotalClick = () => {
     // We change routes and pass the initial state that we have
-    navigate("total", { state: { items: items } });
+    navigate("/total", { state: { items: items } });
   };
 
   return (

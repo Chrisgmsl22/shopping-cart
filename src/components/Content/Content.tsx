@@ -5,6 +5,7 @@ import { Typography } from "antd";
 import { ShoppingIcon } from "../ShoppingIcon";
 import { Navbar } from "../Navbar";
 import { useShoppingCart } from "../../context";
+import { Outlet } from "react-router-dom";
 
 const { Title } = Typography;
 
@@ -33,7 +34,7 @@ export const Content = () => {
   return (
     <>
       <Navbar />
-      <Title>Welcome to Shoppy</Title>
+      <Title>All products available</Title>
       <ShoppingIcon items={selectedItems} />
       <Items items={items} />
     </>

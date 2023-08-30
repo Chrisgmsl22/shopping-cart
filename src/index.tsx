@@ -2,7 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  RouterProvider,
+  Routes,
+  createBrowserRouter,
+} from "react-router-dom";
 import { ErrorPage } from "./error";
 import Root from "./Root";
 import { TotalPage } from "./components/Total";
@@ -10,6 +16,7 @@ import { Contact } from "./components/pages/Contact";
 import { Catalog } from "./components/pages/Catalog";
 import { AllProducts } from "./components/pages/AllProducts";
 import { ShoppingCartProvider } from "./context";
+import { ItemInfo } from "./components/ItemInfo/ItemInfo";
 
 const router = createBrowserRouter([
   {
@@ -18,22 +25,27 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "total",
+    path: "/total",
     element: <TotalPage />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "all-products",
+    path: "/all-products",
     element: <AllProducts />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "contact",
+    path: "/all-products/:itemId",
+    element: <ItemInfo />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/contact",
     element: <Contact />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "catalog",
+    path: "/catalog",
     element: <Catalog />,
     errorElement: <ErrorPage />,
   },
@@ -45,6 +57,33 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ShoppingCartProvider>
+      {/* <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Root />}>
+            {/* Child routes of root *}
+          </Route>
+          <Route
+            path="total"
+            element={<TotalPage />}
+            errorElement={<ErrorPage />}
+          />
+          <Route
+            path="/all-products"
+            element={<AllProducts />}
+            errorElement={<ErrorPage />}
+          />
+          <Route
+            path="/contact"
+            element={<Contact />}
+            errorElement={<ErrorPage />}
+          />
+          <Route
+            path="/catalog"
+            element={<Catalog />}
+            errorElement={<ErrorPage />}
+          />
+        </Routes>
+      </BrowserRouter> */}
       <RouterProvider router={router} />
     </ShoppingCartProvider>
   </React.StrictMode>

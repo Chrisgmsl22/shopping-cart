@@ -22,3 +22,14 @@ export const fetchItems = async (): Promise<Array<ItemApi>> => {
         return [];
     }
 }
+
+export const fetchItem = async (itemId: number): Promise<ItemApi> => {
+    try {
+        const response = await axios.get<ItemApi>(`https://fakestoreapi.com/products/${itemId}`);
+        return response.data;
+    } catch (err) {
+        console.error('Error while fetching Item: ', err);
+        return {} as ItemApi;
+
+    }
+}
