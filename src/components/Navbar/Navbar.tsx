@@ -1,14 +1,9 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Nav } from "./stylesheets";
 import { Link, useNavigate } from "react-router-dom";
-import { ItemsProps } from "../../api/api";
+import { NavItems } from "../../types";
 
-export const Navbar = ({ items }: ItemsProps) => {
-  const navigate = useNavigate();
-
-  const handleNavigate = () => {
-    navigate("/total", { state: { items: items } });
-  };
+export const Navbar = () => {
   return (
     <Nav>
       {/* <header className=""> */}
@@ -35,7 +30,10 @@ export const Navbar = ({ items }: ItemsProps) => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <ShoppingCartOutlined onClick={handleNavigate} />
+            <Link to="/total">
+              <ShoppingCartOutlined />
+            </Link>
+            {/* <ShoppingCartOutlined onClick={handleNavigate} /> */}
           </li>
         </ul>
       </nav>
